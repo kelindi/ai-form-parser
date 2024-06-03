@@ -9,6 +9,8 @@ export default function Home() {
   const [text, setText] = useState("");
   const [data, setData] = useState<z.infer<typeof schema> | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  //define the schema for the form
   const schema = z
     .object({
       name: z.string().min(1).nullish().describe("The name of the person"),
@@ -50,7 +52,7 @@ export default function Home() {
         <TextArea
           value={text}
           onChange={(e: any) => setText(e.target.value)}
-          label="Please provide your Name, Company, Email, and optionally a message"
+          //pass the schema to the textarea
           schema={schema}
           parseddata={data}
         />

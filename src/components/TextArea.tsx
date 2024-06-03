@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-
-import styles from "@system/TextArea.module.scss";
 import { z } from "zod";
 
 function TextArea(props: {
-  label: string;
   value: string;
   onChange: (e: any) => void;
   schema: z.ZodObject<any>;

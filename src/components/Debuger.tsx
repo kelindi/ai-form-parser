@@ -1,10 +1,9 @@
 "use client";
-import TextArea from "@components/TextArea";
 import { useEffect, useState } from "react";
 import { z } from "zod";
 
 export default function Debugger(props: { data: any, schema: z.ZodObject<any> }) {
-    const { data, schema } = props;
+    const { data} = props;
     const [valid, setValid] = useState<boolean>(false);
 
     useEffect(() => {

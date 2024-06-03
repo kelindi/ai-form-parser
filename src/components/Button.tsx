@@ -1,6 +1,6 @@
 export default function Button(props: any) {
   if (props.visual) {
-    return <button children={props.children} style={props.style} />;
+    return <button style={props.style} />;
   }
 
   if (props.loading) {
@@ -36,10 +36,11 @@ export default function Button(props: any) {
   return (
     <button
       className="w-full bg-black rounded text-white p-2 min-h-12 hover:bg-gray-900"
-      children={props.children}
       disabled={props.disabled}
       onClick={props.onClick}
       style={props.style}
-    />
+    >
+      {props.children}
+    </button>
   );
 }
